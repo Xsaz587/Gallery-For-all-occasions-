@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя Галерея (С трудом верится)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="theme-dark"> <div class="bg-container"></div>
+
+    <div id="loader-screen" class="loader-wrapper">
+        <div id="loader-light" class="loader-style-light hidden">
+            <div class="Strich1">
+                <div class="Strich2">
+                    <div class="bubble"></div>
+                    <div class="bubble1"></div>
+                    <div class="bubble2"></div>
+                    <div class="bubble3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loader-dark" class="loader-style-dark hidden">
+            <div class="loader-dark">
+                <div class="loader__inner"></div>
+                <div class="loader__orbit">
+                    <div class="loader__dot"></div>
+                    <div class="loader__dot"></div>
+                    <div class="loader__dot"></div>
+                    <div class="loader__dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="app" class="app-content hidden">
+        
+        <header>
+            <div class="logo">MyGallery</div>
+            <div class="controls">
+                 <button id="theme-toggle" class="button small-btn">
+                    <i class="fa-solid fa-sun" id="theme-icon"></i>
+                </button>
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="breadcrumbs">
+            <span id="crumb-home" onclick="renderSeasons()">Год</span>
+            <span id="crumb-season"></span>
+            <span id="crumb-month"></span>
+        </div>
+
+        <div class="upload-section">
+            <input type="file" id="fileInput" multiple accept="image/*,video/*" style="display: none;">
+            <button class="button primary-btn" onclick="document.getElementById('fileInput').click()">
+                Добавить фото/видео
+            </button>
+        </div>
+
+        <div id="grid-container" class="grid-view"></div>
+        <div id="gallery-container" class="gallery-view hidden"></div>
+
+        <div id="action-bar" class="action-bar hidden">
+            <span id="selected-count">0 выбрано</span>
+            <button class="button small-btn" onclick="downloadSelected()">Скачать</button>
+            <button class="button small-btn red-btn" onclick="deleteSelected()">Удалить</button>
+        </div>
+
+    </div>
+    
+    <div id="viewer" class="viewing hidden">
+        <div class="view-item"></div>
+        <button class="close-btn" onclick="closeViewer()">&times;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

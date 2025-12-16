@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - С трудом верится</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Специфичные стили только для 404, чтобы было как на фото */
+        body.error-page {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1b1e; /* Темный фон как на фото */
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .error-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Контейнер для цифр 4 0 4 */
+        .number-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 250px; /* Огромные цифры */
+            font-weight: bold;
+            line-height: 1;
+            margin-bottom: 20px;
+            gap: 10px; /* Расстояние между цифрами и птицей */
+        }
+
+        .number {
+            color: #eeeeee;
+        }
+
+        /* Стилизуем птицу под цифру 0 */
+        .bird-zero {
+            width: 220px;       /* Ширина под размер цифр */
+            height: 220px;      /* Высота под размер цифр */
+            object-fit: cover;  /* Чтобы не сплющило */
+            border-radius: 50%; /* Делаем круглым (если нужно) или оставляем как есть */
+            /* Если на фото птица без фона, убери border-radius. 
+               Если квадратная - оставь 50%, будет как нолик */
+            filter: grayscale(20%); /* Чуть приглушим цвета, чтобы вписалось */
+            box-shadow: 0 0 50px rgba(0,0,0,0.5); /* Тень для объема */
+        }
+
+        .main-text {
+            font-size: 40px;
+            text-transform: uppercase;
+            font-weight: 800; /* Очень жирный */
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .sub-text {
+            font-size: 18px;
+            color: #aaa; /* Серый цвет для подтекста */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        /* Кнопка в стиле той, что на фото (белая пилюля) */
+        .white-btn {
+            background-color: white;
+            color: #000;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px; /* Круглые края */
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+
+        .white-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Фоновые шумы/градиент для атмосферы */
+        .bg-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="error-page">
+
+    <div class="bg-overlay"></div>
+
+    <div class="error-content">
+        <div class="number-wrapper">
+            <span class="number">4</span>
+            <img src="404.jpg" alt="0" class="bird-zero"> 
+            <span class="number">4</span>
+        </div>
+
+        <div class="main-text">С трудом верится</div>
+        <div class="sub-text">Сомневаюсь что такая страница существует</div>
+
+        <a href="index.html" class="white-btn">
+            Вернуться на главную
+        </a>
+    </div>
+
+</body>
+</html>
+
